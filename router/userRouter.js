@@ -55,7 +55,7 @@ router.post("/login", async (req, res) => {
 
 
 // obtenemos todos los usuarios
-router.get("/id", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
         const usuarios = await User.find();
         return res.status(200).json(usuarios);
@@ -66,7 +66,7 @@ router.get("/id", async (req, res) => {
 });
 
 // eliminamos un usuario
-router.delete("/id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
@@ -82,7 +82,7 @@ router.delete("/id", async (req, res) => {
 
 
 // ruta para registrar un usuario
-router.post("/user/register",
+router.post("/register",
     [
         body('nombre')
             .isLength({ min: 3, max: 20 }).withMessage('El nombre debe tener entre 3 y 20 caracteres')
@@ -162,7 +162,7 @@ router.post("/user/register",
 
     //Ruta para editar un usuario
 
-    router.put("/id", 
+    router.put("/:id", 
         [
             body('nombre')
                 .optional()
