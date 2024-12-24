@@ -82,7 +82,7 @@ router.delete("/:id", async (req, res) => {
 
 
 // ruta para registrar un usuario
-router.post("/register",
+router.post("/user/register",
     [
         body('nombre')
             .isLength({ min: 3, max: 20 }).withMessage('El nombre debe tener entre 3 y 20 caracteres')
