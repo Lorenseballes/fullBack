@@ -162,7 +162,7 @@ router.post("/user/register",
 
     //Ruta para editar un usuario
 
-    router.put("/:id", 
+    router.put("/editar/:id", 
         [
             body('nombre')
                 .optional()
