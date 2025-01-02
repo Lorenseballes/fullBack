@@ -38,9 +38,9 @@ app.use(cors());
 // Rutas de la aplicación como middleware
 app.use('/', userRouter);
 app.use('/user', userRouter);
-app.use('/login', userRouter);
-app.use('/register', userRouter);
-app.use('/editar', userRouter);
+//app.use('/login', userRouter);
+//app.use('/register', userRouter);
+//app.use('/editar', userRouter);
 
 // Seleccionar la URL de conexión
 const URL = MONGO_ATLAS || MONGO_LOCAL;
